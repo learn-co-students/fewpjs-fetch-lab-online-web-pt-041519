@@ -49,8 +49,6 @@ function addPages(json) {
   console.log(`Total pages in series: ${sum}`)
 }
 
-let myData
-
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
