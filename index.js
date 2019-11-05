@@ -1,5 +1,9 @@
-function fetchBooks() {
+import { getHeapSnapshot } from "v8"
 
+function fetchBooks() {
+  fetch("https://anapioficeandfire.com/api/books")
+    .then(resp => resp.json())
+    .then(json => renderBooks(json))
 }
 
 function renderBooks(json) {
@@ -11,6 +15,8 @@ function renderBooks(json) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks()
-})
+function getPosts() {
+  document.addEventListener('DOMContentLoaded', function () {
+    fetchBooks()
+  })
+}
